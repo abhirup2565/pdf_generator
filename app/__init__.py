@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from dotenv import load_dotenv
 
@@ -9,6 +10,7 @@ load_dotenv()
 
 def create_app():
     app=Flask(__name__)
+    app.secret_key=os.getenv('secret_key')
     #Loading configs
     app.config.from_prefixed_env()
     #Initializing extensions
@@ -17,7 +19,6 @@ def create_app():
     #Register Blueprint
     app.register_blueprint(main_blueprint) 
     app.register_blueprint(user_blueprint) 
-    
     return app
     
     

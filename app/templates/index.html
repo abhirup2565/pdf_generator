@@ -4,13 +4,12 @@
 <h1>This is index page</h1>
 <h1>This is page is for all</h1>
 
-<form action="" method="post">
-    username
+<form action="{{url_for('main.signup')}}" method="post">
     <input type="text" name="username" placeholder="username">
     <input type="text" name="email" placeholder="email">
     <input type="password" name="password" placeholder="password">
-    <input type="password" name="confirm_password" placeholder="confirm_password">
-    <input type="radio" value="admin">
-    role
+    <input type="checkbox" value="admin" name="role">
+    <label for="role">Admin</label>
+    <input type="submit">  
 </form>
 {% endblock content %}
