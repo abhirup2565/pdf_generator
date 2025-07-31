@@ -5,4 +5,4 @@ class User(db.Model):
     username=db.Column(db.String,nullable=False)
     email=db.Column(db.String,nullable=False)
     password=db.Column(db.String,nullable=False)
-    role=db.Column(db.String,nullable=False)
+    role=db.Column(db.String,nullable=False,default='user')
